@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, print-scale:1.0">
+  <title>Gad Dushimire – Roots & Shoots Rwanda Volunteer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #d4e9e2 0%, #c2d9d0 100%);
+      font-family: 'Inter', 'Segoe UI', 'Roboto', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+      padding: 40px 24px;
+      line-height: 1.45;
+      color: #1a2e3b;
+    }
+
+    /* main card container */
+    .cv-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0 25px 45px -12px rgba(0, 32, 25, 0.35);
+      overflow: hidden;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* ========= SIDEBAR (LEFT) – fresh green/blue accent ========= */
+    .sidebar {
+      background: #0f2f2c;
+      background: linear-gradient(135deg, #0b3b35 0%, #134e48 100%);
+      color: #f1f9f5;
+      width: 33%;
+      padding: 2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    /* circle profile with cover effect */
+    .profile-wrapper {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .circle-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #a3e4c5;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      background: #eefcf5;
+      transition: transform 0.25s;
+    }
+    .circle-img:hover {
+      transform: scale(1.02);
+    }
+    .sidebar h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      border-left: 4px solid #7bcb9e;
+      padding-left: 12px;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+    .contact-info p, .personal-detail p {
+      margin-bottom: 0.6rem;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .contact-info a {
+      color: #caf4e2;
+      text-decoration: none;
+      word-break: break-word;
+    }
+    .contact-info a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+    .skill-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .skill-cloud span {
+      background: #246b60;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: 0.3px;
+    }
+    .lang-item {
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .lang-level {
+      font-size: 0.7rem;
+      opacity: 0.85;
+      display: block;
+    }
+    hr {
+      margin: 0.5rem 0;
+      border: 0;
+      height: 1px;
+      background: #3a8073;
+    }
+
+    /* ========= MAIN RIGHT PANEL ========= */
+    .main-content {
+      width: 67%;
+      padding: 2rem 2.2rem;
+      background: #ffffff;
+    }
+    .name {
+      font-size: 2.7rem;
+      font-weight: 800;
+      color: #0c4e45;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.2rem;
+    }
+    .title-tag {
+      font-size: 1rem;
+      font-weight: 600;
+      background: #e0f2ea;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      color: #0c6b5c;
+      margin-bottom: 1.2rem;
+    }
+    .section {
+      margin-bottom: 1.8rem;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #155f54;
+      border-bottom: 3px solid #b9dfce;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .exp-item {
+      margin-bottom: 1.2rem;
+    }
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.3rem;
+    }
+    .exp-role {
+      font-weight: 800;
+      color: #1b5e55;
+      font-size: 1rem;
+    }
+    .exp-org {
+      font-weight: 600;
+      color: #328f7c;
+      font-size: 0.85rem;
+    }
+    .exp-date {
+      font-size: 0.7rem;
+      background: #eff7f3;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      color: #2d6a5e;
+    }
+    .exp-list {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+    }
+    .exp-list li {
+      font-size: 0.85rem;
+      margin-bottom: 0.45rem;
+      list-style: none;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+    .exp-list li::before {
+      content: "🌱";
+      position: absolute;
+      left: 0;
+      color: #2f8b74;
+      font-size: 0.75rem;
+    }
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+    .tech-badge {
+      background: #eef6f2;
+      padding: 0.2rem 1rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #1b5e55;
+    }
+    @media (max-width: 780px) {
+      .sidebar, .main-content {
+        width: 100%;
+      }
+      body {
+        padding: 20px 12px;
+      }
+      .cv-container {
+        flex-direction: column;
+      }
+    }
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .sidebar {
+        background: #0f2f2c;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .circle-img {
+        border: 2px solid #ccc;
+      }
+      .title-tag, .tech-badge {
+        background: #eef6f2;
+      }
+    }
+    /* interactive JS tooltip minor */
+    .hover-tip {
+      cursor: help;
+      border-bottom: 1px dotted #5ba08e;
+    }
+  </style>
+</head>
+<body>
+<div class="cv-container">
+  <!-- LEFT SIDEBAR with photo circle & green vibe -->
+  <div class="sidebar">
+    <div class="profile-wrapper">
+      <!-- Replace 'profile.jpg' with your actual image – circle cover ready -->
+      <img src="https://ms8e2rnwaxzqo71v.public.blob.vercel-storage.com/nmrsm/ourteam/gad21.jpeg" alt="Profile Photo" class="circle-img" id="profileImg"
+           onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?background=2a9d8f&color=fff&bold=true&size=150&name=Gad+D';">
+    </div>
+
+    <div class="contact-info">
+      <h2>📌 Contact</h2>
+      <p>📧 <a href="mailto:gisonabcd@gmail.com">gisonabcd@gmail.com</a></p>
+      <p>📞 +250 781 080 627</p>
+      <p>📍 Kigali,Gasabo, Kimihurura</p>
+      <p>🎂 Nov 15, 2001 · Rwandan</p>
+    </div>
+
+    <div>
+      <h2>🌿 Core Competencies</h2>
+      <div class="skill-cloud">
+        <span>GeospatialData Analysis</span><span>GIS Analysis</span><span>WordPress</span>
+        <span>SharePoint</span><span>ArcGIS / GIS</span><span>Website Management</span>
+        <span>Social Media</span><span>Volunteer Systems</span><span>Remote Support</span>
+      </div>
+    </div>
+
+    <div>
+      <h2>🛠️ Tech Stack</h2>
+      <div class="skill-cloud">
+        <span>ArcGIS/QGIS</span><span>HTML/CSS/JS</span><span>SharePoint Admin</span>
+        <span>WordPress (LMS)</span><span>GPS/Survey123</span><span>Power BI basics</span>
+        <span>Mobile data collection</span><span>Digital asset tagging</span>
+      </div>
+    </div>
+
+    <div>
+      <h2>🗣️ Languages</h2>
+      <div class="lang-item">🇬🇧 English <span class="lang-level">(Professional fluency)</span></div>
+      <div class="lang-item">🇫🇷 French <span class="lang-level">(Working proficiency)</span></div>
+      <div class="lang-item">🇷🇼 Kinyarwanda <span class="lang-level">(Native)</span></div>
+      <div class="lang-item">🇹🇿 Swahili <span class="lang-level">(Conversational)</span></div>
+    </div>
+
+    <div>
+      <h2>📜 Certifications</h2>
+      <div class="lang-item">🌱 Foundations of Roots & Shoots <span class="lang-level">(Jane Goodall Institute, 2025)</span></div>
+      <div class="lang-item">🤖 AI for Project Management <span class="lang-level">(Jun 2025)</span></div>
+      <div class="lang-item">💼 Workforce Readiness Soft Skills <span class="lang-level">(Jun 2024)</span></div>
+    </div>
+    <hr>
+    <div>
+      <h2>📎 References</h2>
+      <div><strong>Dr. Biraro Mireille</strong><br>Director Intl. Relations, INES Ruhengeri<br>+250 788 494 570</div>
+      <div style="margin-top: 12px;"><strong>Dr. IDukunda Clemence</strong><br>Roots & Shoots Rwanda Regal Rep.</div>
+    </div>
+  </div>
+
+  <!-- MAIN RIGHT: professional experience with new responsibilities -->
+  <div class="main-content">
+    <div class="name">Gad Dushimire</div>
+    <div class="title-tag">GIS & Digital Systems Specialist</div>
+
+    <!-- Summary with tailored ATS keywords -->
+    <div class="section">
+      <div class="section-title">📋 Professional Summary</div>
+      <p style="font-size:0.9rem;">Dynamic GIS and operations specialist with 2 years of experience in data management, digital systems, and administrative coordination. Currently managing <strong>Roots & Shoots Rwanda website (HTML/CSS/JS), social media channels, volunteer monitoring systems, and geospatial analysis</strong>. Proven ability to maintain contact databases, support remote workflows, and use ArcGIS/GIS for environmental projects. Certified in <strong>Foundations of Roots & Shoots</strong> and passionate about advancing the Jane Goodall Institute’s mission through technology and organization.</p>
+    </div>
+
+    <!-- Professional Experience (enhanced with real current role) -->
+    <div class="section">
+      <div class="section-title">💼 Professional Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">GIS & Digital Operations Specialist</span>
+          <span class="exp-date">Feb 2025 – Present</span>
+        </div>
+        <div class="exp-org">Roots & Shoots Rwanda (Remote · Kigali)</div>
+        <ul class="exp-list">
+          <li><strong>Website & digital system management:</strong> Lead the development and maintenance of Roots & Shoots Rwanda website using HTML/CSS/JS; manage social media (LinkedIn, Twitter, Instagram) increasing engagement by 60%.</li>
+          <li><strong>Volunteer & data systems:</strong> Designing custom systems for volunteer management and monitoring, tracking participation and impact metrics.</li>
+          <li><strong>Geospatial data & GIS:</strong> Perform spatial analysis, thematic mapping, and remote sensing to monitor tree planting & environmental projects; produce maps for global reporting.</li>
+          <li><strong>Database & admin support:</strong> Maintain Roots & Shoots contact lists, distribution lists, and internal datasets. Assist with shared mailbox and escalate complex queries.</li>
+          <li><strong>Digital asset coordination:</strong> Organize digital archive, support SharePoint & WordPress LMS user management.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">GIS Intern</span>
+          <span class="exp-date">Jun 2024 – Nov 2024</span>
+        </div>
+        <div class="exp-org">Gasabo District, Kigali</div>
+        <ul class="exp-list">
+          <li>Assisted in spatial data collection, GPS surveying, and digitization of land ownership records – improving data accuracy and accessibility for local planning.</li>
+          <li>Supported land dispute resolution with organized datasets and administrative documentation.</li>
+          <li>Collaborated with government teams to update GIS databases and shared folder structures, reinforcing workflow coordination.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Data Entry & GIS Field Assistant</span>
+          <span class="exp-date">Dec 2024 – Feb 2025</span>
+        </div>
+        <div class="exp-org">Community Led Landscape Restoration – Nyabihu & Rusizi</div>
+        <ul class="exp-list">
+          <li>Executed accurate data entry and validation of spatial & geographic information using GIS software; reduced data errors through cross-checking protocols.</li>
+          <li>Used GPS and mobile collection tools to input tree-monitoring data, supporting digital archive creation and asset tagging.</li>
+          <li>Coordinated with field teams to maintain contact lists and distribution lists for local restoration initiatives.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Key digital & operational achievements (JD focused) -->
+    <div class="section">
+      <div class="section-title">⚙️ Operational & Technical Highlights</div>
+      <div class="badge-group">
+        <span class="tech-badge">WordPress / LMS user admin</span>
+        <span class="tech-badge">Digital asset tagging</span>
+        <span class="tech-badge">Remote collaboration (Teams/Zoom)</span>
+        <span class="tech-badge">Shared mailbox management</span>
+        <span class="tech-badge">HTML/CSS/JS website dev</span>
+        <span class="tech-badge">Volunteer mgmt systems</span>
+      </div>
+      <ul class="exp-list" style="margin-top: 12px;">
+        <li><strong>Data management:</strong> Maintain high-integrity contact databases & distribution lists for Roots & Shoots network.</li>
+        <li><strong>ArcGIS / GIS skills:</strong> Retrieve geospatial data, images, and survey info to support monitoring & evaluation.</li>
+        <li><strong>Digital archive & admin:</strong> Tag footage, manage shared drive, document workflows for global team alignment.</li>
+        <li><strong>Foundations of Roots & Shoots certified</strong> – deep understanding of JGI mission and youth engagement.</li>
+      </ul>
+    </div>
+
+    <!-- Education + additional course -->
+    <div class="section">
+      <div class="section-title">🎓 Education</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">B.Sc. Land Administration & Management</span>
+          <span class="exp-date">2021 – 2024</span>
+        </div>
+        <div class="exp-org">INES Ruhengeri – Faculty of Sciences & IT</div>
+        <ul class="exp-list">
+          <li>Proficiency in GIS, remote sensing, cadastral surveying, land information systems.</li>
+          <li>Comprehensive knowledge in database design, land registration and spatial analysis.</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-role">Foundations of Roots & Shoots Certificate</span>
+          <span class="exp-date">2024</span>
+        </div>
+        <div class="exp-org">Jane Goodall Institute – Global Programme</div>
+        <ul class="exp-list"><li>Official training on Roots & Shoots framework, youth empowerment, and environmental action planning.</li></ul>
+      </div>
+    </div>
+
+    <!-- Custom Systems & Website showcase (using JS) -->
+    <div class="section">
+      <div class="section-title">💻 What I can do (Live Digital Toolkit)</div>
+      <div style="background:#f7fefb; border-radius: 24px; padding: 12px 16px; border:1px solid #cde9df;">
+        <div style="display:flex; flex-wrap:wrap; gap: 14px; justify-content:space-between; align-items:center;">
+          <div><span style="background:#196e5e; color:white; padding:5px 12px; border-radius: 40px;">🌐 Website Dev (HTML/CSS/JS)</span></div>
+          <div><span style="background:#196e5e; color:white; padding:5px 12px; border-radius: 40px;">📱 Social Media Management</span></div>
+          <div><span style="background:#196e5e; color:white; padding:5px 12px; border-radius: 40px;">🗺️ Geospatial Data Analysis</span></div>
+          <div><span style="background:#196e5e; color:white; padding:5px 12px; border-radius: 40px;">🧑‍🤝‍🧑 Volunteer Monitoring Systems</span></div>
+        </div>
+        <p style="margin-top: 12px; font-size:0.85rem;"><strong>Currently:</strong> I manage <strong>Roots & Shoots Rwanda website</strong> (custom HTML/CSS, interactive maps), lead geospatial analysis for reforestation impact, and develop tailored systems to track volunteer engagement, streamline communication, and enhance data-driven decisions.</p>
+        <button id="demoBtn" style="margin-top: 12px; background:transparent; border:1px solid #2f8b74; padding:6px 14px; border-radius: 50px; font-weight:600; color:#196e5e; cursor:pointer;">✨ Show dynamic impact →</button>
+        <p id="impactMsg" style="font-size:0.8rem; margin-top: 8px; color:#2f6b5e;"></p>
+      </div>
+    </div>
+
+    <!-- References block with JS hover effect (optional) -->
+    <div class="section">
+      <div class="section-title">📞 References & Network</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+        <div style="flex:1; background:#f5fcf9; padding: 8px 12px; border-radius: 18px;">
+          <strong>Dr. Biraro Mireille</strong><br>Director, INES Ruhengeri<br><span class="hover-tip" title="+250 782844570">📞 +250 782844570</span>
+        </div>
+        <div style="flex:1; background:#f5fcf9; padding: 8px 12px; border-radius: 18px;">
+          <strong>Dr. Dukunda Clemence</strong><br>Regal Rep, Roots & Shoots Rwanda<br><span class="hover-tip" title="Available upon request">📧 clemence@roots-shoots.rw</span>
+        </div>
+      </div>
+      <p style="margin-top: 12px; font-size:0.75rem; color:#3e7b6e;">✅ References available upon request – strong background in Roots & Shoots global network.</p>
+    </div>
+    <div style="border-top: 1px solid #e0efe9; margin-top: 0.5rem; padding-top: 0.8rem; font-size:0.7rem; text-align:center; color:#438072;">Remote ready · ATS optimized · Fully tailored for Roots & Shoots Global Operations Assistant</div>
+  </div>
+</div>
+
+<!-- SIMPLE JS for interaction & better outfit (green/blue vibe) -->
+<script>
+  (function() {
+    const btn = document.getElementById('demoBtn');
+    const msgDiv = document.getElementById('impactMsg');
+    if(btn) {
+      btn.addEventListener('click', () => {
+        msgDiv.innerHTML = '🌍📊 I build volunteer management dashboards, maintain Roots & Shoots website (HTML/CSS/JS, geospatial plugins), and use ArcGIS to retrieve survey data & images — fully aligned with Global Operations Assistant needs. ✅';
+        msgDiv.style.background = '#e0f2ea';
+        msgDiv.style.padding = '8px 12px';
+        msgDiv.style.borderRadius = '30px';
+        msgDiv.style.transition = '0.2s';
+        btn.innerText = '✓ Impact shown';
+        btn.disabled = true;
+      });
+    }
+    // optional: smooth hover on profile
+    const profileImg = document.getElementById('profileImg');
+    if(profileImg && profileImg.src.includes('placehold')) {
+      profileImg.style.objectFit = 'cover';
+    }
+    console.log("CV ready - Gad Dushimire | Roots & Shoots digital ops");
+  })();
+</script>
+</body>
+</html>
